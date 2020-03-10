@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>My Task Board</title>
+    <link id="mystyle" rel="stylesheet" type="text/css" href="css/mycss.css" />
+  </head>
+
+  <body>
+    <div id="addnote-container">
+      <img id="headerimg" src="images/title.png" alt="My Task Board" />
+      <form id="addnote-form" onsubmit="return false">
+        <textarea name="tasktodo" id="taskinput" cols="30" rows="4"  placeholder="Write your note here..." required></textarea>
+        <div>
+          <label for="dateinput">Target date:</label>
+          <input type="date" id="dateinput" required />
+        </div>
+        <div>
+          <label for="timeinput">Target time (optional):</label>
+          <input type="time" id="timeinput" value="00:00" />
+        </div>
+        <div>
+      
+          <!-- Add Button  --> 
+      <svg id="addbutton" viewBox="45 60 400 320" onclick="addNote()">
+    <path fill="#fff" d="M 90 210 C 90 180 90 150 90 150 C 150 150 180 150 180 150 C 180 150 300 150 300 150 C 300 150 330 150 390 150 C 390 150 390 180 390 210 C 390 240 390 270 390 270 C 330 270 300 270 300 270 C 300 270 180 270 180 270 C 180 270 150 270 90 270 C 90 270 90 240 90 210" mask="url(#knockout-text)"></path>
+    <mask id="knockout-text">
+      <rect width="100%" height="100%" fill="#fff" x="0" y="0" />
+      <text x="135" y="227" fill="#000">Add Note</text>
+    </mask>
+  </svg>
+
+<!-- Reset Button -->
+ <svg id="resetbutton" viewBox="45 60 400 320" onclick="resetFormInputsAndStyle()">
+    <path fill="#fff" d="M 90 210 C 90 180 90 150 90 150 C 150 150 180 150 180 150 C 180 150 300 150 300 150 C 300 150 330 150 390 150 C 390 150 390 180 390 210 C 390 240 390 270 390 270 C 330 270 300 270 300 270 C 300 270 180 270 180 270 C 180 270 150 270 90 270 C 90 270 90 240 90 210" mask="url(#knockout-text2)"></path>
+    <mask id="knockout-text2">
+      <rect width="100%" height="100%" fill="#fff" x="0" y="0" />
+      <text x="165" y="227" fill="#000">Reset</text>
+    </mask>
+  </svg> 
+        </div>
+      </form>
+      <div id="alerts"></div>
+      <div id="settingscontainer">
+      </div>
+    <div id="notes-container"></div>
+    <script src="js/constructor.js"></script>
+    <script src="js/assistance_functions.js"></script>
+    <script src="js/dom_access.js"></script>
+    <script src="js/controller.js"></script>
+  </body>
+</html>

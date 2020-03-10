@@ -1,0 +1,265 @@
+body {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  background-image: url(../images/tile.jpg);
+}
+
+#notes-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  grid-auto-flow: row;
+  font-size: 12px;
+}
+
+#notes-container .note {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 50px 135px 25px;
+  background-image: url(../images/notebg.png);
+  background-repeat: no-repeat;
+  margin: auto;
+  width: 200px;
+  height: 250px;
+  transition: opacity 1s ease-in-out;
+}
+
+#notes-container .note .innerDivForText {
+  width: 170px;
+  height: 135px;
+  margin-left: auto;
+  margin-right: 22px;
+  margin-top: 0;
+  margin-bottom: 0;
+  overflow-y: auto;
+  word-wrap: break-word;
+  grid-column: 1 / span 2;
+  grid-row: 2 / span 2;
+  color: #28334aff;
+}
+
+#notes-container .note .innerDivForCurrentDate {
+  margin-top: 30px;
+  margin-left: 2px;
+  grid-column: 1;
+  grid-row: 1;
+  font-weight: bold;
+  font-size: 10px;
+  color: #00a4ccff;
+}
+
+#notes-container .note .innerDivForTargetDate {
+  grid-column: 2;
+  grid-row: 3;
+  color: #ff3ea5ff;
+}
+
+#notes-container .note .targetTextDiv {
+  grid-column: 1;
+  grid-row: 3;
+  margin-left: 5px;
+  font-weight: bold;
+  color: #28334aff;
+}
+
+#notes-container .note .removeButton {
+  grid-column: 2;
+  grid-row: 1;
+  padding-right: 3px;
+  padding-left: 3px;
+  margin: auto;
+  margin-top: 30px;
+  opacity: 0;
+}
+
+#notes-container .note .removeButton:hover {
+  color: white;
+  background-color: red;
+}
+
+#notes-container .note:hover .removeButton {
+  opacity: 1;
+  cursor: pointer;
+}
+
+#addnote-container {
+  display: flex;
+  flex-direction: column;
+}
+
+#addnote-container #headerimg {
+  margin: auto;
+}
+
+#addnote-container #taskinput {
+  display: block;
+  width: 500px;
+  height: 135px;
+  box-sizing: border-box;
+  background-color: transparent;
+  line-height: 33px;
+}
+
+#addnote-container #addnote-form {
+  padding-bottom: 15px;
+  padding-top: 12px;
+  padding-left: 80px;
+  background-image: url(../images/formbg.jpg);
+  margin: auto;
+}
+
+#addnote-container #alerts {
+  margin: auto;
+  color: red;
+  font-weight: bold;
+  background-color: white;
+  width: 420px;
+  padding: auto;
+  padding-left: 80px;
+  padding-right: 80px;
+}
+
+#addnote-container .not-pass-validation {
+  border: 3px solid red;
+}
+
+#addnote-container select,
+#addnote-container input,
+#addnote-container textarea {
+  border: 0;
+  background-color: transparent;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-size: 16px;
+}
+
+#addnote-container #dateinput,
+#addnote-container #timeinput {
+  height: 35px;
+  box-sizing: border-box;
+}
+
+#addnote-container #for-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-left: 110px;
+}
+
+#addnote-container #for-buttons #addbutton,
+#addnote-container #for-buttons #resetbutton {
+  border: 2px solid black;
+  border-radius: 10px;
+  margin-bottom: 2px;
+  width: 100px;
+}
+
+#addnote-container #for-buttons #addbutton:hover,
+#addnote-container #for-buttons #resetbutton:hover {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#addnote-container #for-buttons #settings {
+  border: 2px solid black;
+  border-radius: 10px;
+  margin-bottom: 2px;
+  z-index: 1;
+}
+
+#addnote-container #for-buttons #settings:hover {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#addnote-container #settingscontainer {
+  background-image: url(../images/formbg.jpg);
+  margin: auto;
+  width: 580px;
+  height: 50px;
+  display: none;
+}
+
+#addnote-container #settingscontainer div {
+  margin-left: 80px;
+}
+
+#addnote-container #settingscontainer #fornotetodisplay {
+  margin-bottom: 6px;
+  margin-top: -13px;
+}
+
+#addbutton {
+  width: 13vw;
+  position: fixed;
+  top: 13%;
+  left: 80%;
+  max-width: 430px;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+  transform: translateY(-50%) translateX(-50%);
+  z-index: 2;
+  -webkit-filter: drop-shadow(0 0 40px rgba(0, 0, 0, 0.3));
+  filter: drop-shadow(0 0 40px rgba(0, 0, 0, 0.3));
+}
+#addbutton path {
+  cursor: pointer;
+  -webkit-animation: blob 2s infinite forwards;
+  animation: blob 2s infinite forwards;
+  -webkit-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+}
+
+#resetbutton {
+  width: 13vw;
+  position: fixed;
+  top: 13%;
+  left: 20%;
+  max-width: 430px;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+  transform: translateY(-50%) translateX(-50%);
+  z-index: 2;
+  -webkit-filter: drop-shadow(0 0 40px rgba(0, 0, 0, 0.3));
+  filter: drop-shadow(0 0 40px rgba(0, 0, 0, 0.3));
+}
+#resetbutton path {
+  cursor: pointer;
+  -webkit-animation: blob 2s infinite forwards;
+  animation: blob 2s infinite forwards;
+  -webkit-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+}
+svg path:hover {
+  fill: #fafafa;
+}
+svg text {
+  font-size: 45px;
+}
+
+@-webkit-keyframes blob {
+  25% {
+    d: path("M 90 210 C 90 180 110 160 130 160 C 160 160 180 140 200 130 C 230 120 270 100 290 140 C 310 170 340 100 360 140 C 370 160 390 180 390 210 C 390 240 380 290 350 280 C 330 270 300 280 280 290 C 260 300 230 300 220 290 C 200 270 160 310 140 280 C 130 260 90 240 90 210 ");
+    -webkit-transform: rotate(-5deg);
+    transform: rotate(-5deg);
+  }
+  50% {
+    d: path("M 90 210 C 90 180 100 150 120 130 C 150 100 180 140 200 130 C 230 120 270 100 290 140 C 300 160 330 130 360 140 C 390 150 390 180 390 210 C 390 240 380 300 350 280 C 330 270 320 230 280 260 C 260 280 220 310 200 290 C 180 270 160 280 140 280 C 110 280 90 240 90 210");
+  }
+  75% {
+    d: path("M 90 210 C 90 180 110 180 130 170 C 150 160 170 130 200 130 C 240 130 260 150 290 140 C 310 130 340 120 360 140 C 380 160 390 180 390 210 C 390 240 380 260 350 270 C 320 280 290 270 270 260 C 240 250 230 280 210 290 C 180 310 130 300 110 280 C 90 260 90 240 90 210");
+    -webkit-transform: rotate(5deg);
+    transform: rotate(5deg);
+  }
+}
+
+@keyframes blob {
+  25% {
+    d: path("M 90 210 C 90 180 110 160 130 160 C 160 160 180 140 200 130 C 230 120 270 100 290 140 C 310 170 340 100 360 140 C 370 160 390 180 390 210 C 390 240 380 290 350 280 C 330 270 300 280 280 290 C 260 300 230 300 220 290 C 200 270 160 310 140 280 C 130 260 90 240 90 210 ");
+    -webkit-transform: rotate(-5deg);
+    transform: rotate(-5deg);
+  }
+  50% {
+    d: path("M 90 210 C 90 180 100 150 120 130 C 150 100 180 140 200 130 C 230 120 270 100 290 140 C 300 160 330 130 360 140 C 390 150 390 180 390 210 C 390 240 380 300 350 280 C 330 270 320 230 280 260 C 260 280 220 310 200 290 C 180 270 160 280 140 280 C 110 280 90 240 90 210");
+  }
+  75% {
+    d: path("M 90 210 C 90 180 110 180 130 170 C 150 160 170 130 200 130 C 240 130 260 150 290 140 C 310 130 340 120 360 140 C 380 160 390 180 390 210 C 390 240 380 260 350 270 C 320 280 290 270 270 260 C 240 250 230 280 210 290 C 180 310 130 300 110 280 C 90 260 90 240 90 210");
+    -webkit-transform: rotate(5deg);
+    transform: rotate(5deg);
+  }
+}
